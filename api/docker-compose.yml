@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    image: higoreduardodocs/api
+    container_name: api
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+  
+  mongo:
+    image: mongo:4.4-bionic
+    container_name: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    volumes:
+     - mongo-db:/data/db
+
+volumes:
+  mongo-db:
+    driver: local
