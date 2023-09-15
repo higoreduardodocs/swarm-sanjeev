@@ -10,6 +10,7 @@ services:
       - ./:/app
       - /app/node_modules
     environment:
+      - NODE_ENV=development
       - MONGO_USER=admin
       - MONGO_PASS=admin
       - MONGO_DB=user

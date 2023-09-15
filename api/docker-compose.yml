@@ -3,7 +3,7 @@ version: '3'
 services:
   nginx:
     image: nginx:stable-alpine
-    container_name: nginx
+    # container_name: nginx
     ports:
       - 3000:80
     volumes:
@@ -14,7 +14,7 @@ services:
   api:
     build: .
     image: higoreduardodocs/api
-    container_name: api
+    # container_name: api
     # ports:
     #   - 3000:3000
     depends_on:
@@ -22,7 +22,7 @@ services:
   
   mongo:
     image: mongo:4.4-bionic
-    container_name: mongo
+    # container_name: mongo
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=admin

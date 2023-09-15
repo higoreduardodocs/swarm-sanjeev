@@ -4,3 +4,5 @@
 docker-compose.*
 Dockerfile
 yarn.lock
+http
+nginx
