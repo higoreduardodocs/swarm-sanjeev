@@ -22,6 +22,8 @@ services:
       - MONGO_USER=${MONGO_USER}
       - MONGO_PASS=${MONGO_PASS}
     command: yarn start
+    # env_file:
+    #   - ./.env
 
   mongo:
     environment:
