@@ -3,7 +3,7 @@ const PostModel = require('../models/post.model')
 exports.findAll = async (req, res, next) => {
   try {
     const posts = await PostModel.find({})
-    res.status(201).json({
+    res.status(200).json({
       status: 'success',
       results: posts.length,
       data: { posts },
@@ -28,7 +28,7 @@ exports.findById = async (req, res, next) => {
 exports.save = async (req, res, next) => {
   try {
     const post = await PostModel.create(req.body)
-    res.status(200).json({
+    res.status(201).json({
       status: 'success',
       data: { post },
     })
